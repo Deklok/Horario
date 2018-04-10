@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="EE">
+    <select id="getAllEE" resultType="modelo.pojos.EE">
+        SELECT * FROM ee
+    </select>
+    
+    <select id="getEE" resultType="String">
+        SELECT nombre FROM ee WHERE idEE = #{idEE}
+    </select>
+    
+    <select id="getAllSalonesFromEE" resultType="String" parameterType="int">
+        SELECT s.salon FROM ee e LEFT OUTER JOIN ee_salon r ON e.idEE = r.idEE
+        LEFT OUTER JOIN salon s ON r.idSalon = s.idSalon
+        WHERE r.idEE = #{idEE}
+    </select>
+    
+    <select id="getAllSalones" resultType="String">
+        SELECT salon FROM salon
+    </select>
+    
+    <select id="getSalon" resultType="String">
+        SELECT salon FROM salon WHERE idSalon = #{idSalon}
+    </select>
+    
+    <select id="getAllBloques" resultType="modelo.pojos.Bloque">
+        SELECT * FROM semana
+    </select>
+    
+    <select id="existeSalon" resultType="int" parameterType="String">
+        SELECT COUNT(*) FROM salon WHERE salon = #{salon}
+    </select>
+    
+    <select id="obtenerIdEE" resultType="int" parameterType="String">
+        SELECT idEE FROM ee WHERE nombre = #{nombre}
+    </select>
+    
+    <select id="obtenerIdSalon" resultType="int" parameterType="String">
+        SELECT idSalon FROM salon WHERE salon = #{salon}
+    </select>
+    
+    <insert id="registrarEE" parameterType="modelo.pojos.EE">
+        INSERT INTO ee (nombre,maestro)
+        VALUES(#{nombre},#{maestro})
+    </insert>
+    
+    <insert id="registrarSalon" parameterType="String">
+        INSERT INTO salon (salon)
+        VALUES(#{salon})
+    </insert>
+    
+   <insert id="registrarBloque" parameterType="modelo.pojos.Bloque">
+        INSERT INTO semana (dia,hora,idEE,idSalon)
+        VALUES(#{dia},#{hora},#{idEE},#{idSalon})
+    </insert>
+    
+    <insert id="registrarRelacionEE_Salon" parameterType="modelo.pojos.Relacion">
+        INSERT INTO ee_salon (idEE,idSalon)
+        VALUES(#{idEE},#{idSalon})
+    </insert>
+    
+    <delete id="eliminarEE" parameterType="int">
+        DELETE FROM ee WHERE idEE = #{idEE}
+    </delete>
+    
+    <delete id="eliminarSalones" parameterType="int">
+        DELETE FROM ee_salon WHERE idEE = #{idEE}
+    </delete>
+    
+    <delete id="eliminarBloques" parameterType="int">
+        DELETE FROM semana WHERE idEE = #{idEE}
+    </delete>
+    
+    <delete id="eliminar" parameterType="modelo.pojos.Relacion">
+        DELETE FROM semana WHERE dia = #{idEE} AND hora = #{idSalon}
+    </delete>
+    
+</mapper>
+

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLDocumentController">
+   <right>
+      <Pane prefHeight="524.0" prefWidth="201.0" style="-fx-background-color: #303f9f;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane fx:id="panel_agregar" layoutY="2.0" prefHeight="409.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="txt_nombreEE" layoutX="14.0" layoutY="42.0" />
+                  <TextField fx:id="txt_maestroEE" layoutX="14.0" layoutY="120.0" />
+                  <Text fill="WHITE" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre EE" />
+                  <Text fill="WHITE" layoutX="14.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maestro" />
+                  <Button fx:id="boton_aceptarEE" layoutX="29.0" layoutY="324.0" mnemonicParsing="false" onAction="#presionarAceptarEE" style="-fx-background-color: #1e88e5;" text="Aceptar" textFill="WHITE" />
+                  <Button fx:id="boton_cancelarEE" layoutX="110.0" layoutY="324.0" mnemonicParsing="false" onAction="#presionarCancelarEE" style="-fx-background-color: #1e88e5;" text="Cancelar" textFill="WHITE" />
+                  <Text fill="WHITE" layoutX="15.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salon(es)" />
+                  <Text fx:id="txt_salonesEE" fill="WHITE" layoutX="18.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="164.0" />
+                  <Button layoutX="148.0" layoutY="252.0" mnemonicParsing="false" onAction="#agregarSalonEE" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #1e88e5;" text="+" textFill="WHITE" />
+                  <ComboBox fx:id="elegir_salonesEE" editable="true" layoutX="20.0" layoutY="252.0" prefHeight="25.0" prefWidth="113.0" promptText="nuevo" />
+               </children>
+            </Pane>
+            <Pane layoutX="-1.0" layoutY="466.0" prefHeight="32.0" prefWidth="201.0">
+               <children>
+                  <Button fx:id="boton_agregar" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#presionarAgregarEE" style="-fx-background-color: #1e88e5;" text="Agregar EE" textFill="WHITE" />
+                  <Button fx:id="boton_eliminar" disable="true" layoutX="113.0" layoutY="15.0" mnemonicParsing="false" onAction="#presionarEliminarEE" style="-fx-background-color: #1e88e5;" text="Eliminar EE" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Text fill="WHITE" layoutX="27.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salones">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <ListView fx:id="lista_ee" onMousePressed="#presionarElementoLista" prefHeight="424.0" prefWidth="200.0" />
+            <ChoiceBox fx:id="elegir_salones" disable="true" layoutX="111.0" layoutY="434.0" prefHeight="25.0" prefWidth="75.0" />
+         </children></Pane>
+   </right>
+   <top>
+      <Pane prefHeight="60.0" prefWidth="865.0" style="-fx-background-color: #303f9f;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" layoutX="401.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Horario">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="13.0" layoutY="28.0" prefHeight="0.0" prefWidth="856.0" />
+            <Text fill="WHITE" layoutX="92.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lunes" />
+            <Text fill="WHITE" layoutX="217.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Martes" />
+            <Text fill="WHITE" layoutX="324.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Miercoles" />
+            <Text fill="WHITE" layoutX="457.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jueves" />
+            <Text fill="WHITE" layoutX="577.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Viernes" />
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <GridPane fx:id="panel_principal" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="620.0" scaleShape="false" style="-fx-border-color: white; -fx-border-width: 1px;" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+   </center>
+   <left>
+      <AnchorPane prefHeight="500.0" prefWidth="53.0" style="-fx-background-color: #303f9f;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" layoutX="12.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7 AM" />
+            <Text fill="WHITE" layoutX="11.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9 AM" />
+            <Text fill="WHITE" layoutX="8.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11 AM" />
+            <Text fill="WHITE" layoutX="11.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 PM" />
+            <Text fill="WHITE" layoutX="11.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3 PM" />
+            <Text fill="WHITE" layoutX="11.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 PM" />
+            <Text fill="WHITE" layoutX="11.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7 PM" />
+            <Text fill="WHITE" layoutX="12.0" layoutY="521.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9 PM" />
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>
