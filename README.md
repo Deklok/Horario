@@ -13,10 +13,10 @@
 - Visualizar las materias registradas de forma simple y entendible
 
 ## Prototipo inicial
-![Prototipo](https://imgur.com/a/LELl1.png)
+![Prototipo](/documentacion/prototipo)
 
 ## Casos de Uso
-![DiagramaDeCU](https://imgur.com/a/ItgbY.png)
+![DiagramaDeCU](/documentacion/casosdeuso)
 
 ## Descripcion de Casos de Uso
 
@@ -154,5 +154,5 @@
 	- Las Clases seleccionadas con click derecho se eliminan
 
 ## Diagrama del Dominio
-![DiagramaDelDominio](https://imgur.com/a/y9zj6.png)
+![DiagramaDelDominio](/documentacion/casosdeuso.png)
 
