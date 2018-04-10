@@ -13,10 +13,10 @@
 - Visualizar las materias registradas de forma simple y entendible
 
 ## Prototipo inicial
-![Prototipo](https://github.com/Deklok/Horario/documentacion/prototipo.png)
+![Prototipo](/documentacion/prototipo.png)
 
 ## Casos de Uso
-![DiagramaDeCU](/documentacion/casosdeuso)
+![DiagramaDeCU](/documentacion/casosdeuso.png)
 
 ## Descripcion de Casos de Uso
 
@@ -154,5 +154,5 @@
 	- Las Clases seleccionadas con click derecho se eliminan
 
 ## Diagrama del Dominio
-![DiagramaDelDominio](/documentacion/casosdeuso.png)
+![DiagramaDelDominio](/documentacion/dominio.png)
 
