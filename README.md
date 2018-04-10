@@ -13,7 +13,7 @@
 - Visualizar las materias registradas de forma simple y entendible
 
 ## Prototipo inicial
-![Prototipo](/documentacion/prototipo)
+![Prototipo](https://github.com/Deklok/Horario/documentacion/prototipo.png)
 
 ## Casos de Uso
 ![DiagramaDeCU](/documentacion/casosdeuso)
